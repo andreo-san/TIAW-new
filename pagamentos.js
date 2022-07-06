@@ -53,10 +53,10 @@ function insertItem(item, index) {
     <td>${item.valor}</td>
     <td>${item.categoria}</td>
     <td class="acao">
-      <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
+      <button onclick="editItem(${index})"><i class="fa-solid fa-pen-to-square"></i></button>
     </td>
     <td class="acao">
-      <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
+      <button onclick="deleteItem(${index})"><i class="fa-solid fa-trash-can"></i></button>
     </td>
   `
   tbody.appendChild(tr)
