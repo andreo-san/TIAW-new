@@ -66,6 +66,9 @@ aside{
     background-color: #6F52ED;
     width: 100px;
     height: 100px;
+    padding-left: 18px;
+    display: flex;
+    align-items: center;
 }
 
 canvas{
