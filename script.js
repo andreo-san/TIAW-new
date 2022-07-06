@@ -85,7 +85,7 @@ onload = function(){
 function registrar(chart){
     let valorSaida = saida.value;
     let valorTituloSaida = tituloSaida.value;
-
+    
     //Registro das entradas
     if(selecionarOp.value == 'entrada'){
         if(valorSaida != "" && valorTituloSaida != ""){
@@ -96,7 +96,6 @@ function registrar(chart){
             historico_geral.id.push(index);
             historico_geral.html_.push(`<tr class="entrada-cor" id="${index}"><td>${valorTituloSaida}</td><td>R$${valorSaida}</td><td><i class="fa-solid fa-pen-to-square" onclick="editar(this)"></i> <i class="fa-solid fa-trash-can" id="${valorSaida}" onclick="deletar(this)"></i></td></tr>`);
             tabelaDespesas.insertAdjacentHTML('afterbegin', `<tr class="entrada-cor" id="${index}"><td>${valorTituloSaida}</td><td>R$${valorSaida}</td><td><i class="fa-solid fa-pen-to-square" onclick="editar(this)"></i> <i class="fa-solid fa-trash-can" id="${valorSaida}" onclick="deletar(this)"></i></td></tr>`);
-            addData(myChart, valorTituloSaida, valorSaida);
             addData2(myChart2, valorSaida, selecionarOp.value);
         }else{
             alert("Preencha todos os valores!");
@@ -393,3 +392,31 @@ const ctx = document.getElementById('myChart').getContext('2d');
             ]
         }
     });
+
+  function cngValue(){
+
+    apoio = selecionarOp.value;
+
+    if(apoio == 'saida'){
+        tituloSaida.innerHTML = `<option value="Assinaturas">Assinaturas e serviços</option>
+        <option value="Casa">Casa</option>
+        <option value="Compras">Compras</option>
+        <option value="Dívidas">Dívidas e empréstimos</option>
+        <option value="Educação">Educação</option>
+        <option value="Família">Família e filhos</option>
+        <option value="Saúde">Saúde</option>
+        <option value="Mercado">Mercado</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Investimento">Investimento</option>
+        <option value="Impostos">Impostos</option>
+        <option value="Outros">Outros</option>`
+    }else if(apoio == 'entrada'){
+        tituloSaida.innerHTML = `<option value="Investimentos">Investimentos</option>
+        <option value="Salário">Salário</option>
+        <option value="Dividendos">Dividendos</option>
+        <option value="Serviços">Serviços</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Outros">Outros</option>`
+    }
+
+  }
