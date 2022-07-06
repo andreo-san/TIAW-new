@@ -4,6 +4,10 @@ main{
     justify-content: center;
 }
 
+.none{
+    display: none;
+}
+
 #container{
     display: grid;
     justify-content: center;
